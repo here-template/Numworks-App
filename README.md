@@ -105,6 +105,22 @@ This command resolves video compatibility issues on some Linux systems.
 ### 🎨 Customizing the application
 Edit `src/main.rs` to customize your application. The current example displays "Hello World!" with perfectly centered text and waits for the EXE key to exit.
 
+#### 🖼️ Important: Icon Size Configuration
+When you replace the default icon with your own, you **must** update the array size in `main.rs`:
+
+```rust
+// Change this size to match your icon's byte size
+pub static EADK_APP_ICON: [u8; 1520] = *include_bytes!("../target/icon.nwi");
+```
+
+**How to find your icon size:**
+```shell
+# Check the size of your generated icon
+ls -la target/icon.nwi
+```
+
+If the compilation fails with a "mismatched types" error, it means the array size doesn't match your icon's actual size. Update the number in the brackets `[u8; YOUR_SIZE_HERE]` to fix this.
+
 ### ➕ Adding features
 - 🔧 Use EADK APIs in `src/eadk.rs` for display, input, etc.
 - 📦 Add your dependencies in `Cargo.toml`

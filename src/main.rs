@@ -26,17 +26,18 @@ fn estimate_text_width(text: &str, large_font: bool) -> u16 {
 #[used]
 #[cfg(target_os = "none")]
 #[unsafe(link_section = ".rodata.eadk_app_name")]
-pub static EADK_APP_NAME: [u8; 13] = *b"Num Template\0";
+pub static EADK_APP_NAME: [u8; 13] = *b"Num Template\0"; //YOUR APP NAME HERE
 
 #[used]
 #[cfg(target_os = "none")]
 #[unsafe(link_section = ".rodata.eadk_api_level")]
-pub static EADK_APP_API_LEVEL: u32 = 0;
+pub static EADK_APP_API_LEVEL: u32 = 0; 
 
 #[used]
 #[cfg(target_os = "none")]
 #[unsafe(link_section = ".rodata.eadk_app_icon")]
-pub static EADK_APP_ICON: [u8; 3437] = *include_bytes!("../target/icon.nwi");
+//Dont forget to change size (1520) to the size of your icon (in bytes)
+pub static EADK_APP_ICON: [u8; 1520] = *include_bytes!("../target/icon.nwi"); //YOUR APP ICON HERE
 
 #[unsafe(no_mangle)]
 fn main() -> isize {
