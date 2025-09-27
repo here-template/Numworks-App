@@ -10,6 +10,10 @@ check:
     cargo build --release --bin num-template --target=thumbv7em-none-eabihf
     cargo build --release --target={{current_target}} --lib
 
+export-nwa:
+    just build
+    mv target/thumbv7em-none-eabihf/release/num-template num-template.nwa
+
 [macos]
 run_nwb:
     ./epsilon_simulator/output/release/simulator/macos/epsilon.app/Contents/MacOS/Epsilon --nwb ./target/{{current_target}}/release/libNumTemplateSim.dylib
