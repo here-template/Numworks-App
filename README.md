@@ -150,7 +150,7 @@ The template includes a `estimate_text_width()` function that calculates text wi
 
 1. 📥 Clone this template
 2. 📦 Install prerequisites
-3. 🖼️ Add your `assets/icon.png` (16x16 PNG)
+3. 🖼️ Add your `assets/icon.png` (55x56 PNG)
 4. ✏️ Modify `src/main.rs` for your application
 5. 🔨 Build with `just build`
 6. 🧪 Test with `just sim` or deploy with `just send`
